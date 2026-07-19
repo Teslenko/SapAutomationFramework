@@ -11,3 +11,7 @@ Enterprise C# Automation Framework for SAP GUI.
 - Allure
 - Rider
 - Claude Code
+
+## Roadmap
+
+Планы развития фреймворка описаны в [docs/SAP_AUTOMATION_ROADMAP.md](docs/SAP_AUTOMATION_ROADMAP.md).
