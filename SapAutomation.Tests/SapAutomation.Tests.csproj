@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SapAutomation.Core\SapAutomation.Core.csproj" />
+    <ProjectReference Include="..\SapAutomation.Infrastructure.Mock\SapAutomation.Infrastructure.Mock.csproj" />
   </ItemGroup>
 
 </Project>
