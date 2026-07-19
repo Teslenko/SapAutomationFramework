@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SapAutomation.Tests", "SapA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SapAutomation.Infrastructure.Mock", "SapAutomation.Infrastructure.Mock\SapAutomation.Infrastructure.Mock.csproj", "{7B45CA0B-8832-46A6-A6DF-CA9C7F9077B3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SapAutomation.Infrastructure.Logging", "SapAutomation.Infrastructure.Logging\SapAutomation.Infrastructure.Logging.csproj", "{F394C44A-5B12-4B47-A120-ECE34D3F3333}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{7B45CA0B-8832-46A6-A6DF-CA9C7F9077B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B45CA0B-8832-46A6-A6DF-CA9C7F9077B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B45CA0B-8832-46A6-A6DF-CA9C7F9077B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F394C44A-5B12-4B47-A120-ECE34D3F3333}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F394C44A-5B12-4B47-A120-ECE34D3F3333}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F394C44A-5B12-4B47-A120-ECE34D3F3333}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F394C44A-5B12-4B47-A120-ECE34D3F3333}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

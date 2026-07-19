@@ -29,4 +29,11 @@ public sealed class ConnectionOptions
     /// Таймаут ожидания установления соединения. По умолчанию — 30 секунд.
     /// </summary>
     public TimeSpan Timeout { get; init; } = TimeSpan.FromSeconds(30);
+
+    /// <summary>
+    /// Возвращает представление параметров соединения, безопасное для записи в лог:
+    /// значение <see cref="Password"/> маскируется и никогда не попадает в вывод как есть.
+    /// </summary>
+    public string ToLogSafeString() =>
+        $"ConnectionId: {ConnectionId} | User: {User ?? "-"} | Password: {(string.IsNullOrEmpty(Password) ? "-" : "***")} | Client: {Client ?? "-"} | Timeout: {Timeout}";
 }

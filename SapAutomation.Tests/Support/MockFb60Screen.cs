@@ -12,14 +12,15 @@ namespace SapAutomation.Tests.Support;
 /// </summary>
 internal static class MockFb60Screen
 {
-    public static ISapSession Create(string statusBarTextAfterSave)
+    public static ISapSession Create(string statusBarTextAfterSave, ISapLogger? logger = null)
     {
         var statusBar = new MockSapStatusBar(Fb60Page.StatusBarId);
-        var vendor = new MockSapTextBox(Fb60Page.VendorFieldId);
-        var amount = new MockSapTextBox(Fb60Page.AmountFieldId);
+        var vendor = new MockSapTextBox(Fb60Page.VendorFieldId, logger: logger);
+        var amount = new MockSapTextBox(Fb60Page.AmountFieldId, logger: logger);
         var save = new MockSapButton(
             Fb60Page.SaveButtonId,
-            onClick: () => statusBar.SetText(statusBarTextAfterSave));
+            onClick: () => statusBar.SetText(statusBarTextAfterSave),
+            logger: logger);
 
         var session = new MockSapSession("fb60-mock-session");
         session.Register(vendor);
@@ -27,7 +28,7 @@ internal static class MockFb60Screen
         session.Register(save);
         session.Register(statusBar);
 
-        var engine = new MockSapAutomationEngine(session);
+        var engine = new MockSapAutomationEngine(session, logger);
         var connection = engine.Connect(new ConnectionOptions { ConnectionId = "T01" });
 
         return connection.OpenSession();

@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using SapAutomation.Core.Abstractions;
 
 namespace SapAutomation.Infrastructure.Mock;
@@ -9,11 +10,14 @@ public class MockSapGuiElement : ISapGuiElement
 {
     private readonly Action? _onClick;
 
-    public MockSapGuiElement(string id, string text = "", Action? onClick = null)
+    protected ISapLogger Logger { get; }
+
+    public MockSapGuiElement(string id, string text = "", Action? onClick = null, ISapLogger? logger = null)
     {
         Id = id;
         Text = text;
         _onClick = onClick;
+        Logger = logger ?? NullSapLogger.Instance;
     }
 
     public string Id { get; }
@@ -24,7 +28,12 @@ public class MockSapGuiElement : ISapGuiElement
 
     public void Click()
     {
+        var stopwatch = Stopwatch.StartNew();
+
         WasClicked = true;
         _onClick?.Invoke();
+
+        stopwatch.Stop();
+        Logger.LogAction("Click", Id, stopwatch.Elapsed, "Success");
     }
 }

@@ -10,12 +10,17 @@ namespace SapAutomation.Infrastructure.Mock;
 public class MockSapAutomationEngine : ISapAutomationEngine
 {
     private readonly MockSapSession _session;
+    private readonly ISapLogger _logger;
 
-    public MockSapAutomationEngine(MockSapSession session)
+    public MockSapAutomationEngine(MockSapSession session, ISapLogger? logger = null)
     {
         _session = session;
+        _logger = logger ?? NullSapLogger.Instance;
     }
 
-    public ISapConnection Connect(ConnectionOptions options) =>
-        new MockSapConnection(options.ConnectionId, _session);
+    public ISapConnection Connect(ConnectionOptions options)
+    {
+        _logger.Info($"Connect | {options.ToLogSafeString()}");
+        return new MockSapConnection(options.ConnectionId, _session);
+    }
 }

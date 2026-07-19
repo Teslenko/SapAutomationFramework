@@ -8,8 +8,8 @@ namespace SapAutomation.Infrastructure.Mock;
 /// </summary>
 public class MockSapButton : MockSapGuiElement, ISapButton
 {
-    public MockSapButton(string id, Action? onClick = null)
-        : base(id, text: string.Empty, onClick: onClick)
+    public MockSapButton(string id, Action? onClick = null, ISapLogger? logger = null)
+        : base(id, text: string.Empty, onClick: onClick, logger: logger)
     {
     }
 }
