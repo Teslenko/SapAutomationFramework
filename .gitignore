@@ -1,0 +1,34 @@
+﻿# Rider
+.idea/
+
+# Claude
+.claude/
+
+# Build
+**/bin/
+**/obj/
+
+# Visual Studio
+.vs/
+
+# User files
+*.user
+*.suo
+
+# Logs
+*.log
+
+# Test Results
+TestResults/
+
+# Allure
+allure-results/
+allure-report/
+
+# ReSharper
+_ReSharper*/
+*.DotSettings.user
+
+# Windows
+Thumbs.db
+Desktop.ini
