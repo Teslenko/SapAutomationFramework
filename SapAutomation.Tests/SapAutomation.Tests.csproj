@@ -25,6 +25,7 @@
     <ProjectReference Include="..\SapAutomation.Core\SapAutomation.Core.csproj" />
     <ProjectReference Include="..\SapAutomation.Infrastructure.Mock\SapAutomation.Infrastructure.Mock.csproj" />
     <ProjectReference Include="..\SapAutomation.Infrastructure.Logging\SapAutomation.Infrastructure.Logging.csproj" />
+    <ProjectReference Include="..\SapAutomation.Api\SapAutomation.Api.csproj" />
   </ItemGroup>
 
 </Project>
