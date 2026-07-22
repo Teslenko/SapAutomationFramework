@@ -22,11 +22,12 @@ public class InvoiceFlow
     /// <summary>
     /// Проводит счёт поставщика и возвращает текст строки статуса после сохранения.
     /// </summary>
-    public string PostVendorInvoice(string vendorId, decimal amount)
+    public string PostVendorInvoice(string vendorId, decimal amount, string documentType = "RE")
     {
         var stopwatch = Stopwatch.StartNew();
         var page = new Fb60Page(_session);
 
+        page.DocumentType.Select(documentType);
         page.Vendor.SetValue(vendorId);
         page.Amount.SetValue(amount.ToString(CultureInfo.InvariantCulture));
         page.Save.Click();

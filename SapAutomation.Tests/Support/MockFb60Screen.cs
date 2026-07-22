@@ -17,6 +17,11 @@ internal static class MockFb60Screen
         var statusBar = new MockSapStatusBar(Fb60Page.StatusBarId);
         var vendor = new MockSapTextBox(Fb60Page.VendorFieldId, logger: logger);
         var amount = new MockSapTextBox(Fb60Page.AmountFieldId, logger: logger);
+        var documentType = new MockSapComboBox(
+            Fb60Page.DocumentTypeComboBoxId,
+            options: new[] { "RE", "KG" },
+            selectedValue: "RE",
+            logger: logger);
         var save = new MockSapButton(
             Fb60Page.SaveButtonId,
             onClick: () => statusBar.SetText(statusBarTextAfterSave),
@@ -25,6 +30,7 @@ internal static class MockFb60Screen
         var session = new MockSapSession("fb60-mock-session");
         session.Register(vendor);
         session.Register(amount);
+        session.Register(documentType);
         session.Register(save);
         session.Register(statusBar);
 

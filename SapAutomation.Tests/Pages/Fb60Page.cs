@@ -10,6 +10,7 @@ public class Fb60Page
 {
     internal const string VendorFieldId = "wnd[0]/usr/ctxtBSEG-LIFNR";
     internal const string AmountFieldId = "wnd[0]/usr/txtBSEG-WRBTR";
+    internal const string DocumentTypeComboBoxId = "wnd[0]/usr/cmbBKPF-BLART";
     internal const string SaveButtonId = "wnd[0]/tbar[0]/btn[11]";
     internal const string StatusBarId = "wnd[0]/sbar";
 
@@ -23,6 +24,8 @@ public class Fb60Page
     public ISapTextBox Vendor => _session.FindElementById<ISapTextBox>(VendorFieldId);
 
     public ISapTextBox Amount => _session.FindElementById<ISapTextBox>(AmountFieldId);
+
+    public ISapComboBox DocumentType => _session.FindElementById<ISapComboBox>(DocumentTypeComboBoxId);
 
     public ISapButton Save => _session.FindElementById<ISapButton>(SaveButtonId);
 
